@@ -6,7 +6,7 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   auth: {
-    user: "user-info104-playground",
+    user: "user-info104-grupo1",
     password:
       process.env.MONGODB_PASSWORD ||
       "Agrega MONGODB_PASSWORD=tu_contraseña en archivo .env",
@@ -16,7 +16,7 @@ const client = new MongoClient(uri, {
 export const dbConnection = client
   .connect()
   .then((client) => {
-    return client.db("info104-playground");
+    return client.db("info104-grupo1");
   })
   .catch((err) => {
     console.error(err);
