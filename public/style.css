@@ -1,3 +1,26 @@
 body {
   font-family: Montserrat, sans-serif;
 }
+.uno {
+  background-color: black;
+  color: white;
+}
+.dos {
+  background-color: white;
+  color: black;
+}
+
+.derecha {
+  right: 100%;
+}
+
+.button1:hover {
+  background-color: white;
+  color: black;
+  transition-duration: 0.2s;
+}
+.button2:hover {
+  background-color: black;
+  color: white;
+  transition-duration: 0.2s;
+}

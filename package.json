@@ -37,7 +37,8 @@
     "npm-force-resolutions": "0.0.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-icons": "^3.11.0"
+    "react-icons": "^3.11.0",
+    "use-remember-state": "^2.0.0"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.27",
