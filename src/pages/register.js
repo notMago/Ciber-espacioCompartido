@@ -16,7 +16,7 @@ import {
   AlertDescription,
   CloseButton,
   useToast,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import Axios from "axios";
 
 const register = () => {

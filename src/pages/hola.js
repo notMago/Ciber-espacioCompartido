@@ -10,7 +10,7 @@ import {
   Button,
   Input,
   Checkbox,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 
 const LoginFormularios = () => {
   const [datos, setDatos] = useState({
