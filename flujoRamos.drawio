@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-11-18T13:39:07.274Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="cICDUwT7ph6K9_VBnNHz" version="13.6.5" pages="3">
+<mxfile host="65bd71144e" modified="2020-11-18T14:40:55.244Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="gnUZPBprtuykcJcN1FgM" version="13.6.5" pages="3">
     <diagram id="dhNw0vgPH9vMowXlXi8j" name="verRamos">
         <mxGraphModel dx="1359" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -63,7 +63,7 @@
         </mxGraphModel>
     </diagram>
     <diagram name="register" id="wbxjvpBO11__POFifYMO">
-        <mxGraphModel dx="937" dy="363" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1133" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-0"/>
                 <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-1" parent="8wwHdv7dpoQ4_Vg7DCHK-0"/>
@@ -112,7 +112,7 @@
                         <mxPoint x="1" y="1" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-14" value="/api/cuentas" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
+                <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-14" value="/api/register" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
                     <mxGeometry x="46.88" y="90" width="86.25" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-15" value="Backend" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
@@ -121,7 +121,7 @@
                 <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-16" value=".JSON" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
                     <mxGeometry x="430" y="230" width="40" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-7" value="[ &quot;error&quot;: &quot;Hay campos Incompletos&lt;span&gt;&quot; ,&lt;/span&gt;&lt;br&gt;&quot;cuenta creada correctamente&quot;]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
+                <mxCell id="8wwHdv7dpoQ4_Vg7DCHK-7" value="{&quot;error&quot;: &quot;Hay campos Incompletos&lt;span&gt;&quot; ||&lt;/span&gt;&lt;br&gt;mensaje&quot;cuenta creada correctamente&quot;]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1">
                     <mxGeometry x="110" y="170" width="630" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="EwuJAbLZrEGLxm2s5szK-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="8wwHdv7dpoQ4_Vg7DCHK-1" source="8wwHdv7dpoQ4_Vg7DCHK-14" target="8wwHdv7dpoQ4_Vg7DCHK-7">

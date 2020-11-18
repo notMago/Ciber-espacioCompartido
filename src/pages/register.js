@@ -15,11 +15,13 @@ import {
   AlertTitle,
   AlertDescription,
   CloseButton,
+  useToast,
 } from "@chakra-ui/core";
 import Axios from "axios";
 
 const register = () => {
   const { push } = useRouter();
+  const toast = useToast();
   const [datos, setDatos] = useState({
     email: "",
     password: "",
@@ -82,11 +84,14 @@ const register = () => {
                       password: datos.password,
                     });
 
-                    if (datos.email != "" && datos.password != "") {
-                      alert("Cuenta creada Correctamente");
-                      push("/hola");
+                    if (data.error) {
+                      alert(data.error);
                     } else {
-                      alert("Hay campos incompletos");
+                      toast({
+                        title: data.mensaje,
+                      });
+                      localStorage.setItem("cuenta", data.email);
+                      push("/hola");
                     }
                   }}
                 >

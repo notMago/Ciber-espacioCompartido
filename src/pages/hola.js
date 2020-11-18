@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {
   Stack,
@@ -72,6 +72,12 @@ const LoginPanel = () => {
 };
 
 const Login = () => {
+  useEffect(() => {
+    const cuenta = localStorage.getItem("cuenta");
+    if (cuenta) {
+      alert("ya hay cuenta " + cuenta);
+    }
+  }, []);
   return (
     <Fragment>
       <Box bg="#c6c6c6">
