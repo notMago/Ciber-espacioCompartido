@@ -17,7 +17,7 @@ export const ProbandoAPI = () => {
         onClick={async () => {
           setIsLoading(true);
 
-          // const { data } = await Axios.post("/api/hello_world", {
+          //const { data } = await Axios.post("/api/hello_world", {
           const { data } = await Axios.post("/api/list", {
             nombre: "Pablo",
           });
