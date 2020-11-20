@@ -16,10 +16,14 @@ import {
   AlertDescription,
   CloseButton,
   useToast,
+  InputRightElement,
+  InputGroup,
 } from "@chakra-ui/react";
 import Axios from "axios";
 
 const register = () => {
+  const [show, setShow] = React.useState(false);
+  const handleClick = () => setShow(!show);
   const { push } = useRouter();
   const toast = useToast();
   const [datos, setDatos] = useState({
@@ -61,16 +65,26 @@ const register = () => {
                       placeholder="Your Email"
                       type="text"
                       name="email"
+                      variant="black"
                     />
                   </FormControl>
                   <FormControl>
                     <FormLabel>Constraseña</FormLabel>
-                    <Input
-                      onChange={handleInputChange}
-                      placeholder="Escriba su contraseña"
-                      type="text"
-                      name="password"
-                    />
+                    <InputGroup>
+                      <Input
+                        onChange={handleInputChange}
+                        placeholder="Escriba su contraseña"
+                        type="text"
+                        name="password"
+                        type={show ? "text" : "password"}
+                        variant="black"
+                      />
+                      <InputRightElement width="4.5rem">
+                        <Button h="1.75rem" size="xs" onClick={handleClick}>
+                          {show ? "Hide" : "Show"}
+                        </Button>
+                      </InputRightElement>
+                    </InputGroup>
                   </FormControl>
                 </Stack>
                 <Button

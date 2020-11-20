@@ -1,4 +1,3 @@
-import { isEmpty } from "lodash";
 import { NextApiResponse, NextApiRequest } from "next";
 import { dbConnection } from "../../db";
 /**
@@ -19,21 +18,13 @@ export default async (req, res) => {
       error: "campos incompletos",
     });
   } else {
-    const cuentaExistente = await collection.findOne({ email: req.body.email });
-    if (cuentaExistente) {
-      //el correo ya existe, returnar error
-      return res.send({ error: "correo ya registrado" });
+    const correo = await collection.findOne({
+      email: req.body.email,
+    });
+    if (correo && req.body.password === correo.password) {
+      return res.send({ mensaje: "Cuenta Iniciada Correctamente" });
     }
-    await collection.insertOne({
-      email: req.body.email,
-      password: req.body.password,
-    });
-    console.log(JSON.stringify(await collection.find({}).toArray()));
-
-    res.send({
-      mensaje: "Cuenta Creada satisfactoriamente",
-      email: req.body.email,
-    });
+    return res.send({ error: "la contraseña esta mal" });
   }
 
   //collection.deleteOne({});
