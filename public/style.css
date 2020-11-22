@@ -24,3 +24,41 @@ body {
   color: white;
   transition-duration: 0.2s;
 }
+.button {
+  background-color: rgb(0, 140, 255);
+}
+.button3:hover {
+  background-color: rgba(0, 0, 255, 0.541);
+  transition-duration: 0.2s;
+}
+.fondo {
+  background: radial-gradient(blue, cyan, rgb(43, 78, 112));
+}
+.fondo2 {
+  background-color: rgb(0, 195, 255);
+  color: white;
+  transition-duration: 0.4s;
+}
+.fondo2:hover {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg)
+    translateX(-30px) translateY(0px) translateZ(80px);
+  background-color: black;
+  transition-duration: 0.4s;
+}
+.inputcolor {
+  color: black;
+}
+.fondoregistro {
+  background-color: #c6c6c6;
+  transition-duration: 0.4s;
+}
+.fondologin {
+  background-color: #c6c6c6;
+  transition-duration: 0.4s;
+}
+.fondologin:hover {
+  transform: perspective(2000px) rotateX(0deg) rotateY(20deg) rotateZ(0deg)
+    translateX(30px) translateY(0px) translateZ(80px);
+  background-color: rgba(158, 152, 152, 0.336);
+  transition-duration: 0.4s;
+}

@@ -44,7 +44,7 @@ const register = () => {
 
   return (
     <Fragment>
-      <Box bg="#c6c6c6">
+      <Box className="fondoregistro">
         <Flex align="right" justify="right" p={200}>
           <Flex minHeight="10vh">
             <Box
@@ -54,7 +54,7 @@ const register = () => {
               maxWidth="6008px"
               minHeight="300px"
             >
-              <Box>
+              <Box className="fondologin" p={20}>
                 <Stack onSubmit={enviarDatos}>
                   <Heading>Crear cuenta</Heading>
 

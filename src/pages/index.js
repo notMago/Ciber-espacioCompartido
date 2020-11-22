@@ -9,7 +9,7 @@ import SideBar from "../components/SideBar";
 export default function IndexPage() {
   return (
     <Stack spacing="45px" padding="10px">
-      <Heading>Hello World</Heading>
+      <Heading>Bienvenido al Ciber espacio compartido</Heading>
       <SideBar />
       <ProbandoJavascript />
       <ProbandoAPI />

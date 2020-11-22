@@ -12,6 +12,7 @@ export default async (req, res) => {
   const db = await dbConnection; // conecta la base de datos
 
   const collection = db.collection("ramos"); //crea la coleccion o la usa?
+  console.log(JSON.stringify(await collection.find({}).toArray()));
   if (req.body.ramo === "borrar") {
     collection.deleteOne({});
     console.log(JSON.stringify(await collection.find({}).toArray()));

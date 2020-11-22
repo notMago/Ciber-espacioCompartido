@@ -45,8 +45,8 @@ const registerRamos = () => {
 
   return (
     <Fragment>
-      <Box bg="#c6c6c6">
-        <Flex align="right" justify="right" p={200}>
+      <Box className="fondo">
+        <Flex align="right" justify="right" p={200} justifyContent="center">
           <Flex minHeight="10vh">
             <Box
               width="fit-content"
@@ -55,7 +55,7 @@ const registerRamos = () => {
               maxWidth="6008px"
               minHeight="300px"
             >
-              <Box>
+              <Box className="fondo2" p={20}>
                 <Stack onSubmit={enviarDatos}>
                   <Heading>Crear ramo</Heading>
 
@@ -67,6 +67,7 @@ const registerRamos = () => {
                       type="text"
                       name="ramo"
                       variant="black"
+                      className="inputcolor"
                     />
                   </FormControl>
                   <FormControl>
@@ -78,6 +79,7 @@ const registerRamos = () => {
                         type="text"
                         name="codigo"
                         variant="black"
+                        className="inputcolor"
                       />
                     </InputGroup>
                   </FormControl>
@@ -90,11 +92,14 @@ const registerRamos = () => {
                         type="text"
                         name="semestre"
                         variant="black"
+                        className="inputcolor"
                       />
                     </InputGroup>
                   </FormControl>
                 </Stack>
                 <Button
+                  variant="green"
+                  className="button button3"
                   px={100}
                   type="submit"
                   marginTop="15px"
@@ -122,9 +127,6 @@ const registerRamos = () => {
               </Box>
             </Box>
           </Flex>
-          <Heading color="black.500" size="lg" px={40} py={20}>
-            Todos los apuntes<p>al alcance de tus manos</p>
-          </Heading>
         </Flex>
       </Box>
     </Fragment>
