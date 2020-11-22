@@ -74,7 +74,6 @@ const register = () => {
                       <Input
                         onChange={handleInputChange}
                         placeholder="Escriba su contraseña"
-                        type="text"
                         name="password"
                         type={show ? "text" : "password"}
                         variant="black"

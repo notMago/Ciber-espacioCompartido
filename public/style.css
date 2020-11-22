@@ -15,8 +15,8 @@ body {
 }
 
 .button1:hover {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   transition-duration: 0.2s;
 }
 .button2:hover {

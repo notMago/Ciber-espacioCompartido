@@ -32,7 +32,16 @@ const SideBar = () => {
 
   return (
     <Fragment>
-      <Button colorScheme="blue" height="48px" width="250px" onClick={onOpen}>
+      <Button
+        colorScheme="white"
+        color="black"
+        height="40px"
+        width="180px"
+        className="button1"
+        onClick={onOpen}
+        border="1px"
+        borderColor="black"
+      >
         Añadir Contenido
       </Button>
       <Drawer
@@ -62,13 +71,11 @@ const SideBar = () => {
                 <Box>
                   <FormLabel htmlFor="url">Url del contenido</FormLabel>
                   <InputGroup>
-                    <InputLeftAddon>http://</InputLeftAddon>
                     <Input
                       type="url"
                       id="url"
-                      placeholder="Please enter domain"
+                      placeholder="Ingrese el enlace"
                     />
-                    <InputRightAddon>.com</InputRightAddon>
                   </InputGroup>
                 </Box>
 
