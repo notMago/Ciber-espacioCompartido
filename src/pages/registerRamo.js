@@ -45,7 +45,7 @@ const registerRamos = () => {
 
   return (
     <Fragment>
-      <Box className="fondo">
+      <Box className="fondo" animation="fondito 4s infinite">
         <Flex align="right" justify="right" p={200} justifyContent="center">
           <Flex minHeight="10vh">
             <Box

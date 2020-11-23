@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import SideBar from "../components/SideBar";
-import { ProbandoListas } from "../components/ramos";
+import ComponenteDePrueba from "../components/ramos";
 import {
   Text,
   useToast,
@@ -19,14 +19,10 @@ import {
   Radio,
 } from "@chakra-ui/react";
 const Informatica = () => {
-  const color = "blue";
-
-  const btnRef = React.useRef();
-
   return (
     <Fragment>
       <SideBar />
-      <ProbandoListas />
+      <ComponenteDePrueba />
     </Fragment>
   );
 };

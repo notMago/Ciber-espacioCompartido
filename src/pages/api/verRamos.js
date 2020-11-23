@@ -13,12 +13,6 @@ export default async (req, res) => {
 
   //   await collection.deleteMany({});
   //[ {"nombre_ramo":"calculo1","codigo":"BAIN075","semestre":2}]
-
-  res.send(
-    JSON.stringify([
-      { nombre_ramo: "calculo1", codigo: "BAIN075", semestre: 2 },
-      { nombre_ramo: "calculo2", codigo: "BAIN085", semestre: 3 },
-    ])
-  );
-  //res.send(JSON.stringify(await collection.find({}).toArray()));
+  //console.log(JSON.stringify(await collection.find({}).toArray()));
+  res.send(JSON.stringify(await collection.find({}).toArray()));
 };
