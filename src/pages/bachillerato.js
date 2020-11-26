@@ -43,11 +43,7 @@ const Informatica = () => {
           </HStack>
         </Flex>
       </Stack>
-      <HStack>
-        <Stack>
-          <ComponenteDePrueba />
-        </Stack>
-      </HStack>
+      <HStack></HStack>
     </Fragment>
   );
 };

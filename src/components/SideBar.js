@@ -33,14 +33,14 @@ const SideBar = () => {
   return (
     <Fragment>
       <Button
-        colorScheme="white"
+        colorScheme="orange"
         color="black"
         height="40px"
         width="180px"
         className="button1"
         onClick={onOpen}
         border="1px"
-        borderColor="black"
+        variant="teal"
       >
         Añadir Contenido
       </Button>
@@ -65,6 +65,8 @@ const SideBar = () => {
                     <option value="segun">Prueba</option>
                     <option value="Guia">Guia</option>
                     <option value="kola">Ayudantias</option>
+                    <option value="kola">Video</option>
+                    <option value="kola">libros</option>
                   </Select>
                 </Box>
 

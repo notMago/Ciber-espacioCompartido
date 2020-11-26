@@ -14,9 +14,12 @@ body {
   right: 100%;
 }
 
+.button1 {
+  background-color: orangered;
+}
 .button1:hover {
-  background-color: black;
-  color: white;
+  background-color: orange;
+  color: black;
   transition-duration: 0.2s;
 }
 .button2:hover {
@@ -76,4 +79,29 @@ body {
   background-color: #c6c6c6;
   transition-duration: 0.4s;
   transform: perspective(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+.boton3 {
+  background-color: orangered;
+  color: black;
+}
+
+.boton3:hover {
+  background-color: orange;
+  color: black;
+}
+.fondoprincipal {
+  background: radial-gradient(circle, red, black, rgb(43, 78, 112));
+}
+@keyframes fondito2 {
+  from {
+    background: radial-gradient(circle, black, red, rgb(43, 78, 112));
+    background-color: white;
+    color: white;
+  }
+  to {
+    background: radial-gradient(circle, red, black, rgb(43, 78, 112));
+    background-color: white;
+    color: black;
+  }
 }
