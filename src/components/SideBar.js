@@ -25,10 +25,26 @@ import {
   Select,
   Textarea,
 } from "@chakra-ui/react";
+import Axios from "axios";
 
 const SideBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const firstField = React.useRef();
+
+  const [datos, setDatos] = useState({
+    link: "",
+    apunte: "guia",
+    ramo: "info085",
+  });
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const enviarDatos = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <Fragment>
@@ -59,35 +75,47 @@ const SideBar = () => {
 
             <DrawerBody>
               <Stack spacing="24px">
+                <Stack onSubmit={enviarDatos}>
+                  <Box>
+                    <FormLabel htmlFor="owner">Tipo de Apunte</FormLabel>
+                    <Select
+                      name="apunte"
+                      id="owner1"
+                      defaultValue="guia"
+                      onChange={handleInputChange}
+                    >
+                      <option value="guia">Guia</option>
+                      <option value="prueba">Prueba</option>
+                      <option value="ayudantias">Ayudantias</option>
+                      <option value="video">Video</option>
+                      <option value="libros">Libros</option>
+                    </Select>
+                  </Box>
+                </Stack>
                 <Box>
-                  <FormLabel htmlFor="owner">Tipo de Apunte</FormLabel>
-                  <Select id="owner" defaultValue="segun">
-                    <option value="segun">Prueba</option>
-                    <option value="Guia">Guia</option>
-                    <option value="kola">Ayudantias</option>
-                    <option value="kola">Video</option>
-                    <option value="kola">libros</option>
-                  </Select>
+                  <Stack>
+                    <FormLabel htmlFor="url">Url del contenido</FormLabel>
+                    <InputGroup onSubmit={enviarDatos}>
+                      <Input
+                        onChange={handleInputChange}
+                        name="link"
+                        placeholder="Ingrese el enlace"
+                      />
+                    </InputGroup>
+                  </Stack>
                 </Box>
-
-                <Box>
-                  <FormLabel htmlFor="url">Url del contenido</FormLabel>
-                  <InputGroup>
-                    <Input
-                      type="url"
-                      id="url"
-                      placeholder="Ingrese el enlace"
-                    />
-                  </InputGroup>
-                </Box>
-
-                <Box>
+                <Stack onSubmit={enviarDatos}>
                   <FormLabel htmlFor="owner">Ramos</FormLabel>
-                  <Select id="owner" defaultValue="segun">
-                    <option value="segun">INFO085</option>
-                    <option value="kola">BAIN085</option>
+                  <Select
+                    id="owner"
+                    defaultValue="info085"
+                    onChange={handleInputChange}
+                    name="ramo"
+                  >
+                    <option value="info085">INFO085</option>
+                    <option value="bain085">BAIN085</option>
                   </Select>
-                </Box>
+                </Stack>
               </Stack>
             </DrawerBody>
 
@@ -95,7 +123,23 @@ const SideBar = () => {
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue">Submit</Button>
+              <Button
+                onClick={async () => {
+                  const { data } = await Axios.post("api/todosLosApuntes", {
+                    link: datos.link,
+                    apunte: datos.apunte,
+                    ramo: datos.ramo,
+                  });
+                  if (data.error) {
+                    alert(data.error);
+                  } else {
+                    alert(data.mensaje);
+                  }
+                }}
+                colorScheme="blue"
+              >
+                Submit
+              </Button>
             </DrawerFooter>
           </DrawerContent>
         </DrawerOverlay>
