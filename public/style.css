@@ -22,6 +22,22 @@ body {
   color: black;
   transition-duration: 0.2s;
 }
+.button4 {
+  background-color: rgb(121, 192, 15);
+}
+.button4:hover {
+  background-color: green;
+  transition-duration: 0.2s;
+}
+.button5 {
+  background-color: rgb(0, 204, 255);
+  color: white;
+}
+.button5:hover {
+  background-color: rgb(0, 80, 201);
+  color: white;
+  transition-duration: 0.2s;
+}
 .button2:hover {
   background-color: black;
   color: white;

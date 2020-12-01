@@ -29,7 +29,7 @@ const Informatica = () => {
       <Stack spacing={1}>
         <Flex>
           <HStack>
-            <SideBar />
+            <SideBar colorSidebar="button5" />
             <Button
               onClick={() => {
                 push("/");

@@ -47,7 +47,7 @@ export default function IndexPage() {
           </ButtonGroup>
         </Flex>
         <Flex justifyContent="center">
-          <SideBar />
+          <SideBar colorSidebar="button1" />
         </Flex>
       </Stack>
     </Box>

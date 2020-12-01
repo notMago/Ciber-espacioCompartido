@@ -28,7 +28,7 @@ import {
 } from "@chakra-ui/react";
 import Axios from "axios";
 
-const SideBar = () => {
+const SideBar = (colorSidebar) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const firstField = React.useRef();
 
@@ -54,7 +54,7 @@ const SideBar = () => {
         color="black"
         height="40px"
         width="180px"
-        className="button1"
+        className={colorSidebar.colorSidebar}
         onClick={onOpen}
         border="1px"
         variant="teal"
