@@ -7,12 +7,11 @@ import { dbConnection } from "../../db";
  */
 export default async (req, res) => {
   req.body;
-  //console.log(`Body = "${JSON.stringify(req.body)}"`);
+
   const db = await dbConnection;
 
   //
   const collection = db.collection("apuntes");
-  console.log(JSON.stringify(await collection.find({}).toArray()));
   if (req.body.link === "") {
     return res.send({
       error: "Y donde esta el link crack :C ",
@@ -22,7 +21,6 @@ export default async (req, res) => {
       link: req.body.link,
     });
     if (url) {
-      //el correo ya existe, returnar error
       return res.send({ error: "Este Apunte ya esta :C " });
     } else {
       await collection.insertOne({
@@ -33,6 +31,4 @@ export default async (req, res) => {
       return res.send({ mensaje: "apunte agregado correctamente" });
     }
   }
-
-  //collection.deleteOne({});
 };

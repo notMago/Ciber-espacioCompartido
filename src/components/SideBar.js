@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import Opciones from "../components/Opciones";
 import { useRouter } from "next/router";
 import { useRememberState } from "use-remember-state";
 import {
@@ -112,8 +113,7 @@ const SideBar = () => {
                     onChange={handleInputChange}
                     name="ramo"
                   >
-                    <option value="info085">INFO085</option>
-                    <option value="bain085">BAIN085</option>
+                    <Opciones />
                   </Select>
                 </Stack>
               </Stack>
