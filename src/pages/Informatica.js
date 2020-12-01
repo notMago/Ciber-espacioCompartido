@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import SideBar from "../components/SideBar";
 import ComponenteDePrueba from "../components/ramos";
+import LlamarRamos from "../components/LlamarRamos";
 import {
   Text,
   useToast,
@@ -45,7 +46,7 @@ const Informatica = () => {
       </Stack>
       <HStack>
         <Stack>
-          <ComponenteDePrueba />
+          <LlamarRamos />
         </Stack>
       </HStack>
     </Fragment>
