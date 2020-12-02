@@ -36,6 +36,7 @@ const SideBar = (colorSidebar) => {
     link: "",
     apunte: "guia",
     ramo: "info085",
+    nombre: "",
   });
   const handleInputChange = (event) => {
     setDatos({
@@ -76,21 +77,15 @@ const SideBar = (colorSidebar) => {
 
             <DrawerBody>
               <Stack spacing="24px">
-                <Stack onSubmit={enviarDatos}>
+                <Stack>
                   <Box>
-                    <FormLabel htmlFor="owner">Tipo de Apunte</FormLabel>
-                    <Select
-                      name="apunte"
-                      id="owner1"
-                      defaultValue="guia"
+                    <FormLabel>Nombre del archivo</FormLabel>
+                    <Input
+                      maxlength="30"
+                      placeholder="Ingrese el nombre"
                       onChange={handleInputChange}
-                    >
-                      <option value="guia">Guia</option>
-                      <option value="prueba">Prueba</option>
-                      <option value="ayudantias">Ayudantias</option>
-                      <option value="video">Video</option>
-                      <option value="libros">Libros</option>
-                    </Select>
+                      name="nombre"
+                    />
                   </Box>
                 </Stack>
                 <Box>
@@ -105,6 +100,23 @@ const SideBar = (colorSidebar) => {
                     </InputGroup>
                   </Stack>
                 </Box>
+                <Stack onSubmit={enviarDatos}>
+                  <Box>
+                    <FormLabel htmlFor="owner">Tipo de Apunte</FormLabel>
+                    <Select
+                      name="apunte"
+                      id="owner1"
+                      defaultValue="guia"
+                      onChange={handleInputChange}
+                    >
+                      <option value="guia">Guia</option>
+                      <option value="prueba">Prueba</option>
+                      <option value="video">Video</option>
+                      <option value="libros">Libros</option>
+                    </Select>
+                  </Box>
+                </Stack>
+
                 <Stack onSubmit={enviarDatos}>
                   <FormLabel htmlFor="owner">Ramos</FormLabel>
                   <Select
@@ -129,6 +141,7 @@ const SideBar = (colorSidebar) => {
                     link: datos.link,
                     apunte: datos.apunte,
                     ramo: datos.ramo,
+                    nombre: datos.nombre,
                   });
                   if (data.error) {
                     alert(data.error);

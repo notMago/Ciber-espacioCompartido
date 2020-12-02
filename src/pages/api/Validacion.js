@@ -24,7 +24,7 @@ export default async (req, res) => {
     if (correo && req.body.password === correo.password) {
       return res.send({ mensaje: "Cuenta Iniciada Correctamente" });
     }
-    return res.send({ error: "la contraseña esta mal" });
+    return res.send({ error: "Error en alguno de los campos" });
   }
 
   //collection.deleteOne({});
