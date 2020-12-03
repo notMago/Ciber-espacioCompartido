@@ -19,43 +19,41 @@ const LinksAqui = ({ valorLink, indice }) => {
   return (
     <>
       <Text>
-        Did you know that{" "}
-        <Link color="teal.500" href={valorLink}>
-          links can live inline with text
+        {valorLink.apunte}{" "}
+        <Link color="teal.500" href={valorLink.link}>
+          este link es de {valorLink.nombre}
         </Link>
       </Text>
     </>
   );
 };
 
-const CuerpoModal = ({ valor, indice }) => {
+const CuerpoModal = ({ valor, indice, tipoApunte }) => {
   const [links, setLinks] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
-
+  const datos = {
+    link: "",
+    apunte: tipoApunte,
+    ramo: valor,
+  };
   const fetchData = async () => {
-    const data = await fetch("api/verApuntes");
-    const links2 = await data.json();
-    console.log(links2);
-    console.log(links2[0].link);
+    const { data: links2 } = await Axios.post("api/verApuntes", datos);
     setLinks(links2);
   };
 
   return links.map((valorLink, indice) => {
-    return (
-      <LinksAqui key={indice} valorLink={valorLink.link} indice={indice} />
-    );
-  });
-  /*
-  const hola = ["absd", "sfokas"];
-  return hola.map((valorLink, indice) => {
     return <LinksAqui key={indice} valorLink={valorLink} indice={indice} />;
-  });*/
+  });
 };
 
 const ListaRamos = ({ valor, indice }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [contador, setContador] = useState(0);
+  const tipoApunte = ["guia", "prueba", "libros", "video"];
+  const numTipoApunte = contador % 4;
+
   return (
     <>
       <Button
@@ -66,22 +64,35 @@ const ListaRamos = ({ valor, indice }) => {
         cursor="pointer"
         onClick={onOpen}
       >
-        {indice} - {valor.ramo}
+        {indice + 1} - {valor.ramo}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Apuntes {valor.ramo}</ModalHeader>
+          <ModalHeader>
+            {tipoApunte[numTipoApunte]} {valor.ramo}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <CuerpoModal valor={valor} indice={indice} />
+            <CuerpoModal
+              valor={valor.ramo}
+              indice={indice}
+              tipoApunte={tipoApunte[numTipoApunte]}
+            />
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant="ghost">Secondary Action</Button>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setContador(contador + 1);
+              }}
+            >
+              {tipoApunte[(contador + 1) % 4]}
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -96,11 +107,11 @@ const LlamarRamos = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch("api/verRamos");
-    const ramos2 = await data.json();
-    setRamos(ramos2);
+    const { data: ramo2 } = await Axios.post("api/verRamos", {
+      nombre_ramo: "informatica",
+    });
+    setRamos(ramo2);
   };
-
   return ramos.map((valor, indice) => {
     return <ListaRamos key={indice} valor={valor} indice={indice} />;
   });
