@@ -8,7 +8,6 @@ import { dbConnection } from "../../db";
  */
 export default async (req, res) => {
   req.body;
-  console.log("req.body.apunte: ", req.body.apunte);
   console.log("req.body: ", JSON.stringify(req.body));
   const db = await dbConnection;
 
@@ -18,14 +17,10 @@ export default async (req, res) => {
   //   await collection.deleteMany({});
 
   console.log(
-    JSON.stringify(await collection.find({ apunte: req.body.apunte }).toArray())
+    JSON.stringify(await collection.find({ ramo: req.body.ramo }).toArray())
   );
-  console.log(JSON.stringify(await collection.find({}).toArray()));
+  // console.log(JSON.stringify(await collection.find({}).toArray()));
   res.send(
-    JSON.stringify(
-      await collection
-        .find({ apunte: req.body.apunte, ramo: req.body.ramo })
-        .toArray()
-    )
+    JSON.stringify(await collection.find({ ramo: req.body.ramo }).toArray())
   );
 };

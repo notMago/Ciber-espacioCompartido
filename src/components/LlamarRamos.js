@@ -19,9 +19,10 @@ const LinksAqui = ({ valorLink, indice }) => {
   return (
     <>
       <Text>
-        {valorLink.apunte}{" "}
+        {valorLink.apunte}
+        {": "}
         <Link color="teal.500" href={valorLink.link}>
-          este link es de {valorLink.nombre}
+          {valorLink.nombre}
         </Link>
       </Text>
     </>
@@ -35,7 +36,7 @@ const CuerpoModal = ({ valor, indice, tipoApunte }) => {
   }, []);
   const datos = {
     link: "",
-    apunte: tipoApunte,
+    apunte: "",
     ramo: valor,
   };
   const fetchData = async () => {
@@ -43,9 +44,25 @@ const CuerpoModal = ({ valor, indice, tipoApunte }) => {
     setLinks(links2);
   };
 
-  return links.map((valorLink, indice) => {
-    return <LinksAqui key={indice} valorLink={valorLink} indice={indice} />;
-  });
+  return links[0] ? (
+    links.map((valorLink, indice) => {
+      return valorLink.apunte === tipoApunte ? (
+        <LinksAqui key={indice} valorLink={valorLink} indice={indice} />
+      ) : (
+        ""
+      );
+    })
+  ) : (
+    <LinksAqui
+      key={0}
+      valorLink={{
+        apunte: "no hay archivo",
+        nombre: "",
+        link: "",
+      }}
+      indice={0}
+    />
+  );
 };
 
 const ListaRamos = ({ valor, indice }) => {
