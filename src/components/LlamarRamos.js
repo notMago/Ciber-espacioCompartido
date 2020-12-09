@@ -81,7 +81,7 @@ const ListaRamos = ({ valor, indice }) => {
         cursor="pointer"
         onClick={onOpen}
       >
-        {indice + 1} - {valor.ramo}
+        {valor.ramo}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -117,7 +117,7 @@ const ListaRamos = ({ valor, indice }) => {
   );
 };
 
-const LlamarRamos = () => {
+const LlamarRamos = ({ TipoRamo }) => {
   const [ramos, setRamos] = useState([]);
   useEffect(() => {
     fetchData();
@@ -130,7 +130,11 @@ const LlamarRamos = () => {
     setRamos(ramo2);
   };
   return ramos.map((valor, indice) => {
-    return <ListaRamos key={indice} valor={valor} indice={indice} />;
+    return valor.codigo.includes(TipoRamo) ? (
+      <ListaRamos key={indice} valor={valor} indice={indice} />
+    ) : (
+      ""
+    );
   });
 };
 

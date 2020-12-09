@@ -24,7 +24,10 @@ export default function IndexPage() {
           <ButtonGroup spacing="300px">
             <Button
               onClick={() => {
-                push("Informatica");
+                push({
+                  pathname: "/asignaturas",
+                  query: { tipo_ramo: "INFO" },
+                });
               }}
               className="boton3"
               border="2px"
@@ -35,7 +38,10 @@ export default function IndexPage() {
             </Button>
             <Button
               onClick={() => {
-                push("bachillerato");
+                push({
+                  pathname: "/asignaturas",
+                  query: { tipo_ramo: "BAIN" },
+                });
               }}
               className="boton3"
               border="2px"
