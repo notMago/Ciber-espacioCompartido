@@ -28,7 +28,6 @@ export default async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    console.log(JSON.stringify(await collection.find({}).toArray()));
 
     res.send({
       mensaje: "Cuenta Creada satisfactoriamente",

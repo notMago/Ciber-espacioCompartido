@@ -36,12 +36,15 @@ const Login = () => {
     event.preventDefault();
   };
   const { push } = useRouter();
-  /*useEffect(() => {
-    const cuenta = localStorage.getItem("cuenta");
+
+  useEffect(() => {
+    const cuenta = localStorage.getItem("correo");
+    const cuenta2 = localStorage.getItem("contraseña");
     if (cuenta) {
-      alert("ya hay cuenta " + cuenta);
+      console.log("ya hay cuenta " + cuenta);
+      console.log("ya hay cuenta " + cuenta2);
     }
-  }, []);*/
+  }, []);
   return (
     <Fragment>
       <Box className="fondoregistro">
@@ -103,7 +106,8 @@ const Login = () => {
                       toast({
                         title: data.mensaje,
                       });
-                      //localStorage.setItem("cuenta", data.email);
+                      localStorage.setItem("contraseña", datos.pass);
+                      localStorage.setItem("correo", datos.email);
                       push("/");
                     }
                   }}

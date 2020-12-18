@@ -50,6 +50,9 @@ body {
   background-color: rgba(0, 0, 255, 0.541);
   transition-duration: 0.2s;
 }
+.fondo4 {
+  background: radial-gradient(circle, cyan, rgb(56, 56, 250), rgb(43, 78, 112));
+}
 
 .fondo {
   background: radial-gradient(circle, blue, cyan, rgb(43, 78, 112));
