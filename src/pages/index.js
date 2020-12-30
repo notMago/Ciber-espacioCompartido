@@ -66,7 +66,7 @@ export default function IndexPage() {
               onClick={() => {
                 push({
                   pathname: "/asignaturas",
-                  query: { tipo_ramo: "INFO" },
+                  query: { tipo_ramo: true },
                 });
               }}
               className="boton3"
@@ -80,7 +80,7 @@ export default function IndexPage() {
               onClick={() => {
                 push({
                   pathname: "/asignaturas",
-                  query: { tipo_ramo: "BAIN" },
+                  query: { tipo_ramo: false },
                 });
               }}
               className="boton3"

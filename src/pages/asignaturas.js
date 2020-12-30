@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import SideBar from "../components/SideBar";
-import ComponenteDePrueba from "../components/ramos";
+import ComponenteDePrueba from "../components/Ramos";
 import LlamarRamos from "../components/LlamarRamos";
+import Ramos from "../components/Ramos";
 import { Button, Stack, Flex, HStack } from "@chakra-ui/react";
 
 const asignaturas = ({}) => {
@@ -32,7 +33,7 @@ const asignaturas = ({}) => {
       </Stack>
       <HStack>
         <Stack>
-          <LlamarRamos TipoRamo={tipo_ramo ?? "null"} />
+          <Ramos TipoRamo={tipo_ramo ?? false} />
         </Stack>
       </HStack>
     </Fragment>
